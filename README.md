@@ -8,7 +8,6 @@ A lightweight, single-file web application for organizing and managing your pers
 ## Overview
 
 Book Collection Tracker helps you keep a clean inventory of your books with detailed metadata, visual cover images, and quick search tools. It was designed to be fast, private, and portable: just open index.html and start cataloging.
-Created by Vojislav Korać, 2026.
 
 ## Features
 
@@ -92,10 +91,10 @@ The app is built for easy modification:
 
 ## File Structure
 
-/
-├── index.html # Complete application (HTML, CSS, JS)
-├── favicon.png # App icon
-└── README.md # This file
+    /
+    ├── index.html # Complete application (HTML, CSS, JS)
+    ├── favicon.png # App icon
+    └── README.md # This file
 
 
 ## Browser Compatibility
