@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection Tracker</title>
+    <script type="text/javascript" nonce="2c47c8f5145f401a82c9e37820e" src="//local.adguard.org?ts=1779382260438&amp;type=content-script&amp;dmn=1015664977661656.a.metaaiusercontent.com&amp;url=https%3A%2F%2F1015664977661656.a.metaaiusercontent.com%2Fhtml%3Fartifact_uuid%3Dd14d5a20-8328-4975-8b81-c736a76ccd80%26download%3DAdding-copyright-bar.html%26ext%3D1779472040%26hash%3DQ5fpDAFa8-H1mnTU5bvnHZLtzWvy&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="2c47c8f5145f401a82c9e37820e" src="//local.adguard.org?ts=1779382260438&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><script type="text/javascript" nonce="2c47c8f5145f401a82c9e37820e" src="//local.adguard.org?ts=1779382260438&amp;type=content-script&amp;dmn=1544893237647515.a.metaaiusercontent.com&amp;url=https%3A%2F%2F1544893237647515.a.metaaiusercontent.com%2Fhtml%3Fartifact_uuid%3Dcb30b651-3c28-44d2-8d5e-2527e7847f9b%26download%3DEditing-Book-Collection-Tracker.html%26ext%3D1779469190%26hash%3DQ5fpDAFRSdix_tpnuJmD7eMTZaS-&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="2c47c8f5145f401a82c9e37820e" src="//local.adguard.org?ts=1779382260438&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="icon" href="data:image/png;base64,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" type="image/svg+xml">
+    <style>
+                        :root {
+            --bg-main: #EBEEF3;
+            --bg-light: #F8FAFC;
+            --accent-green: #0173B2;
+            --accent-orange: #FF7F00;
+            --dark-green: #005A8C;
+            --white: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-muted: #64748B;
+            --frame-bg: #E0F7FA;
+            --like-new: #F0FDFF;
+            --excellent: #E3F6FF;
+            --very-good: #EAF4FF;
+            --good: #FFF5E6;
+            --fair: #FFF0E0;
+            --poor: #FFEFEF;
+            --cyan-accent: #00CDE2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-light) 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 28px 36px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(1, 115, 178, 0.12);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .title-section h1 {
+            font-size: 2rem;
+            color: var(--accent-green);
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .title-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ===== STATS PANEL ===== */
+        .stats-panel {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 14px 20px;
+            min-width: 120px;
+            text-align: center;
+            border: 1px solid rgba(1, 115, 178, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(1, 115, 178, 0.2);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        /* ===== CONTROLS ===== */
+        .controls {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(1, 115, 178, 0.08);
+            display: flex;
+            gap: 8px;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow: visible;
+        }
+
+        .search-box {
+            flex: 1 1 0;
+            min-width: 140px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 9px 12px 9px 36px;
+            border: 2px solid var(--bg-main);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--white);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            box-shadow: 0 0 0 3px rgba(1, 115, 178, 0.15);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: nowrap;
+            flex-shrink: 1;
+        }
+
+        .filter-group select {
+            padding: 8px 10px;
+            border: 2px solid var(--bg-main);
+            border-radius: 12px;
+            font-size: 0.85rem;
+            background: var(--white);
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: border-color 0.2s;
+            white-space: nowrap;
+            max-width: 150px;
+            min-width: 110px;
+            text-overflow: ellipsis;
+        }
+
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(1, 115, 178, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--accent-green) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(1, 115, 178, 0.35);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #FF9F40 100%);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(255, 127, 0, 0.25);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #E86A00 0%, var(--accent-orange) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 127, 0, 0.35);
+        }
+
+        /* ===== TABLE ===== */
+        .table-container {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(1, 115, 178, 0.12);
+        }
+
+        .table-scroll {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        th {
+            background: var(--accent-green);
+            color: var(--white);
+            padding: 14px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        th.sortable:hover {
+            background: var(--dark-green);
+        }
+
+        th .sort-icon {
+            margin-left: 6px;
+            opacity: 0.6;
+            font-size: 0.7rem;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid var(--bg-main);
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        tr:nth-child(even) td {
+            background: var(--bg-light);
+        }
+
+        tr:nth-child(odd) td {
+            background: var(--white);
+        }
+
+        tr:hover td {
+            background: rgba(111, 143, 114, 0.08) !important;
+            transition: background 0.15s;
+        }
+
+        /* Image frame cell */
+        .image-frame {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(90deg, var(--frame-bg) 0%, #F0FDFF 100%);
+            border: 2px solid var(--dark-green);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.2s;
+            overflow: hidden;
+        }
+
+        .image-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(74, 107, 77, 0.3);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .image-frame .placeholder {
+            font-size: 1.5rem;
+            color: var(--dark-green);
+        }
+
+        /* Condition badges */
+        .condition-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .condition-like-new { background: var(--like-new); color: #007a8a; }
+        .condition-excellent { background: var(--excellent); color: #0163b0; }
+        .condition-very-good { background: var(--very-good); color: #0173B2; }
+        .condition-good { background: var(--good); color: #d97900; }
+        .condition-fair { background: var(--fair); color: #c05600; }
+        .condition-poor { background: var(--poor); color: #c62828; }
+
+        /* Editable cells */
+        td[contenteditable="true"] {
+            cursor: text;
+            transition: box-shadow 0.2s;
+        }
+
+        td[contenteditable="true"]:focus {
+            outline: none;
+            box-shadow: inset 0 0 0 2px var(--accent-green);
+            background: #F0F7F1 !important;
+        }
+
+        /* Category tags */
+        .category-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(1, 115, 178, 0.1);
+            color: var(--accent-green);
+        }
+
+        /* Cover type indicator */
+        .cover-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+        }
+
+        .cover-indicator::before {
+            content: "📖";
+        }
+
+        .cover-hardcover::before { content: "📕"; }
+        .cover-paperback::before { content: "📘"; }
+        .cover-digital::before { content: "📱"; }
+
+        /* Action buttons in rows */
+        .row-actions {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .row-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .row-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .row-btn-edit { background: var(--bg-light); }
+        .row-btn-delete { background: #FFE5E5; color: #CC0000; }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 28px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal h2 {
+            color: var(--accent-green);
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid var(--bg-main);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .copyright-bar {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 24px;
+            margin-top: 30px;
+            box-shadow: 0 8px 24px rgba(1, 115, 178, 0.12);
+            text-align: center;
+            position: relative;
+        }
+
+        .copyright-bar::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .copyright-bar p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+            margin-top: 8px;
+        }
+
+        /* Scrollbar styling */
+        .table-scroll::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        .table-scroll::-webkit-scrollbar-track {
+            background: var(--bg-light);
+            border-radius: 5px;
+        }
+
+        .table-scroll::-webkit-scrollbar-thumb {
+            background: var(--accent-green);
+            border-radius: 5px;
+        }
+
+        .table-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats-panel {
+                justify-content: center;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state .icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .empty-state h3 {
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--cyan-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+    </style>
+<script type="text/javascript" nonce="3081a2c90494407bba2815d8438" src="//local.adguard.org?ts=1779357915615&amp;type=content-script&amp;dmn=prod-chat-kimi.tos-cn-beijing.volces.com&amp;url=https%3A%2F%2Fprod-chat-kimi.tos-cn-beijing.volces.com%2Fkimi-fs%2Fokc%2Fazqze4abeg7dm%2Foutput%2FBook_Collection_Web_App.html%3FX-Tos-Algorithm%3DTOS4-HMAC-SHA256%26X-Tos-Credential%3DAKLTYTJlNjgwMjY2ZDBkNDFiYmI5YWNiZDBlZmFmYjIzZTA%252F20260521%252Fcn-beijing%252Ftos%252Frequest%26X-Tos-Date%3D20260521T093335Z%26X-Tos-Expires%3D518400%26X-Tos-Signature%3D785e1f9f76ded22626a2ea46a6ccc2454e3a271db552a09813226e95ce4d3bfa%26X-Tos-SignedHeaders%3Dhost%26response-content-disposition%3Dattachment%253B%2Bfilename%252A%253DUTF-8%2527%2527Book_Collection_Web_App.html&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="3081a2c90494407bba2815d8438" src="//local.adguard.org?ts=1779357915615&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><script type="text/javascript" nonce="3081a2c90494407bba2815d8438" src="//local.adguard.org?ts=1779354313963&amp;type=content-script&amp;dmn=prod-chat-kimi.tos-cn-beijing.volces.com&amp;url=https%3A%2F%2Fprod-chat-kimi.tos-cn-beijing.volces.com%2Fkimi-fs%2Fokc%2Fazqze4abeg7dm%2Foutput%2FBook_Collection_Web_App.html%3FX-Tos-Algorithm%3DTOS4-HMAC-SHA256%26X-Tos-Credential%3DAKLTYTJlNjgwMjY2ZDBkNDFiYmI5YWNiZDBlZmFmYjIzZTA%252F20260521%252Fcn-beijing%252Ftos%252Frequest%26X-Tos-Date%3D20260521T093335Z%26X-Tos-Expires%3D518400%26X-Tos-Signature%3D785e1f9f76ded22626a2ea46a6ccc2454e3a271db552a09813226e95ce4d3bfa%26X-Tos-SignedHeaders%3Dhost%26response-content-disposition%3Dattachment%253B%2Bfilename%252A%253DUTF-8%2527%2527Book_Collection_Web_App.html&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="3081a2c90494407bba2815d8438" src="//local.adguard.org?ts=1779354313963&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script></head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="title-section">
+                <h1><img src="data:image/png;base64,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" alt="" style="height:36px;width:36px;vertical-align:middle;margin-right:12px;">Book Collection Tracker</h1>
+                <p>Organize your personal library with style</p>
+            </div>
+            <div class="stats-panel">
+                <div class="stat-card">
+                    <div class="stat-label">Total Books</div>
+                    <div class="stat-value" id="stat-total">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Hardcovers</div>
+                    <div class="stat-value" id="stat-hard">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Paperbacks</div>
+                    <div class="stat-value" id="stat-paper">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by title, author, publisher..." onkeyup="filterBooks()">
+            </div>
+            <div class="filter-group">
+                <select id="filterCategory" onchange="filterBooks()">
+                    <option value="">All Categories</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="Self-Help">Self-Help</option>
+                    <option value="Science">Science</option>
+                    <option value="Poetry">Poetry</option>
+                    <option value="Children">Children</option>
+                    <option value="Art">Art</option>
+                    <option value="Philosophy">Philosophy</option>
+                </select>
+                <select id="filterCondition" onchange="filterBooks()">
+                    <option value="">All Conditions</option>
+                    <option value="Like New">Like New</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                </select>
+                <select id="filterCover" onchange="filterBooks()">
+                    <option value="">All Covers</option>
+                    <option value="Hardcover">Hardcover</option>
+                    <option value="Paperback">Paperback</option>
+                    <option value="Leather Bound">Leather Bound</option>
+                    <option value="Spiral">Spiral</option>
+                    <option value="Box Set">Box Set</option>
+                    <option value="Digital">Digital</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">➕ Add Book</button>
+            <button class="btn btn-secondary" onclick="exportData()">📥 Export</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <div class="table-scroll">
+                <table id="bookTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" onclick="sortTable('name')">Book Name <span class="sort-icon">↕</span></th>
+                            <th>Cover Image</th>
+                            <th class="sortable" onclick="sortTable('author')">Author <span class="sort-icon">↕</span></th>
+                            <th class="sortable" onclick="sortTable('category')">Category <span class="sort-icon">↕</span></th>
+                            <th>Publisher</th>
+                            <th class="sortable" onclick="sortTable('coverType')">Cover Type <span class="sort-icon">↕</span></th>
+                            <th>Language</th>
+                            <th class="sortable" onclick="sortTable('pages')">Pages <span class="sort-icon">↕</span></th>
+                            <th class="sortable" onclick="sortTable('condition')">Condition <span class="sort-icon">↕</span></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Data populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            💡 Click any cell to edit inline. Use the filter dropdowns to search. Add images by clicking the picture frame.
+        </div>
+
+        <div class="copyright-bar">
+            <p>© 2026 Book Collection Tracker • Created by Vojislav Korać</p>
+        </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <h2 id="modalTitle">📖 Add New Book</h2>
+            <form id="bookForm" onsubmit="saveBook(event)">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label>Book Name</label>
+                    <input type="text" id="formName" required>
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" id="formAuthor" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="formCategory" required>
+                        <option value="">Select...</option>
+                        <option>Fiction</option>
+                        <option>Non-Fiction</option>
+                        <option>Sci-Fi</option>
+                        <option>Fantasy</option>
+                        <option>Mystery</option>
+                        <option>Romance</option>
+                        <option>Biography</option>
+                        <option>History</option>
+                        <option>Self-Help</option>
+                        <option>Science</option>
+                        <option>Poetry</option>
+                        <option>Children</option>
+                        <option>Art</option>
+                        <option>Philosophy</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Publisher</label>
+                    <input type="text" id="formPublisher">
+                </div>
+                <div class="form-group">
+                    <label>Cover Type</label>
+                    <select id="formCoverType" required>
+                        <option value="">Select...</option>
+                        <option>Hardcover</option>
+                        <option>Paperback</option>
+                        <option>Leather Bound</option>
+                        <option>Spiral</option>
+                        <option>Box Set</option>
+                        <option>Digital</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Language</label>
+                    <select id="formLanguage" required>
+                        <option value="">Select...</option>
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>German</option>
+                        <option>Italian</option>
+                        <option>Portuguese</option>
+                        <option>Russian</option>
+                        <option>Chinese</option>
+                        <option>Japanese</option>
+                        <option>Arabic</option>
+                        <option>Hindi</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pages</label>
+                    <input type="number" id="formPages" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Condition</label>
+                    <select id="formCondition" required>
+                        <option value="">Select...</option>
+                        <option>Like New</option>
+                        <option>Excellent</option>
+                        <option>Very Good</option>
+                        <option>Good</option>
+                        <option>Fair</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()" style="background:#ddd;color:#333;">Cancel</button>
+                    <button type="submit" class="btn btn-primary">💾 Save Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Book data from Excel
+        let books = [{"id": 1, "name": "The Great Gatsby", "image": "\ud83d\udcf7", "author": "F. Scott Fitzgerald", "category": "Fiction", "publisher": "Scribner", "coverType": "Hardcover", "language": "English", "pages": 180, "condition": "Excellent"}, {"id": 2, "name": "Sapiens: A Brief History", "image": "\ud83d\udcf7", "author": "Yuval Noah Harari", "category": "Non-Fiction", "publisher": "Harvill Secker", "coverType": "Paperback", "language": "English", "pages": 443, "condition": "Good"}, {"id": 3, "name": "The Alchemist", "image": "\ud83d\udcf7", "author": "Paulo Coelho", "category": "Fiction", "publisher": "HarperOne", "coverType": "Hardcover", "language": "English", "pages": 208, "condition": "Like New"}, {"id": 4, "name": "Atomic Habits", "image": "\ud83d\udcf7", "author": "James Clear", "category": "Self-Help", "publisher": "Avery", "coverType": "Paperback", "language": "English", "pages": 320, "condition": "Very Good"}, {"id": 5, "name": "Dune", "image": "\ud83d\udcf7", "author": "Frank Herbert", "category": "Sci-Fi", "publisher": "Chilton Books", "coverType": "Hardcover", "language": "English", "pages": 412, "condition": "Excellent"}, {"id": 6, "name": "1984", "image": "\ud83d\udcf7", "author": "George Orwell", "category": "Fiction", "publisher": "Secker & Warburg", "coverType": "Paperback", "language": "English", "pages": 328, "condition": "Very Good"}, {"id": 7, "name": "The Hobbit", "image": "\ud83d\udcf7", "author": "J.R.R. Tolkien", "category": "Fantasy", "publisher": "George Allen", "coverType": "Hardcover", "language": "English", "pages": 310, "condition": "Excellent"}];
+        let currentSort = { field: null, dir: 'asc' };
+
+        // === CUSTOM DROPDOWN OPTIONS ===
+        const DEFAULT_OPTIONS = {
+            categories: ["Fiction","Non-Fiction","Sci-Fi","Fantasy","Mystery","Romance","Biography","History","Self-Help","Science","Poetry","Children","Art","Philosophy"],
+            conditions: ["Like New","Excellent","Very Good","Good","Fair","Poor"],
+            covers: ["Hardcover","Paperback","Leather Bound","Spiral","Box Set","Digital"]
+        };
+        
+        let customOptions = JSON.parse(localStorage.getItem('bookCollectionOptions')) || JSON.parse(JSON.stringify(DEFAULT_OPTIONS));
+        
+        // === UNDO HISTORY ===
+        let optionsHistory = [];
+        
+        function pushHistory(action) {
+            optionsHistory.push({
+                action: action,
+                options: JSON.parse(JSON.stringify(customOptions)),
+                books: JSON.parse(JSON.stringify(books))
+            });
+            if (optionsHistory.length > 20) optionsHistory.shift();
+        }
+        
+        function undoLast() {
+            if (optionsHistory.length === 0) {
+                alert('Nothing to undo.');
+                return false;
+            }
+            const last = optionsHistory.pop();
+            customOptions = last.options;
+            books = last.books;
+            saveOptions();
+            populateDropdowns();
+            filterBooks();
+            alert(`↩️ Undid: ${last.action}`);
+            return true;
+        }
+        
+        function saveOptions() {
+            localStorage.setItem('bookCollectionOptions', JSON.stringify(customOptions));
+        }
+        
+        function populateDropdowns() {
+            const populateFilter = (id, items, allLabel) => {
+                const sel = document.getElementById(id);
+                if (!sel) return;
+                const val = sel.value;
+                sel.innerHTML = `<option value="">${allLabel}</option>` + 
+                    items.map(i => `<option value="${i}">${i}</option>`).join('') +
+                    `<option disabled>──────────</option>` +
+                    `<option value="__add__">➕ Add new...</option>` +
+                    `<option value="__manage__">⚙️ Manage...</option>` +
+                    `<option value="__undo__">↩️ Undo</option>`;
+                if (items.includes(val)) sel.value = val;
+            };
+            
+            populateFilter('filterCategory', customOptions.categories, 'All Categories');
+            populateFilter('filterCondition', customOptions.conditions, 'All Conditions');
+            populateFilter('filterCover', customOptions.covers, 'All Covers');
+            
+            const populateForm = (id, items) => {
+                const sel = document.getElementById(id);
+                if (!sel) return;
+                const val = sel.value;
+                sel.innerHTML = `<option value="">Select...</option>` + items.map(i => `<option>${i}</option>`).join('');
+                if (items.includes(val)) sel.value = val;
+            };
+            populateForm('formCategory', customOptions.categories);
+            populateForm('formCondition', customOptions.conditions);
+            populateForm('formCoverType', customOptions.covers);
+        }
+        
+        function handleAddOption(type) {
+            const config = {
+                category: {key: 'categories', label: 'Category', filterId: 'filterCategory', field: 'category'},
+                condition: {key: 'conditions', label: 'Condition', filterId: 'filterCondition', field: 'condition'},
+                cover: {key: 'covers', label: 'Cover Type', filterId: 'filterCover', field: 'coverType'}
+            }[type];
+            
+            const example = type === 'category' ? 'Cookbooks' : type === 'condition' ? 'Mint' : 'Audiobook';
+            const name = prompt(`Add new ${config.label}:
+Enter name (e.g., "${example}"):`);
+            if (!name) return;
+            const trimmed = name.trim();
+            if (!trimmed) return;
+            if (customOptions[config.key].includes(trimmed)) {
+                alert('That option already exists.');
+                return;
+            }
+            pushHistory(`Add ${config.label}: ${trimmed}`);
+            customOptions[config.key].push(trimmed);
+            customOptions[config.key].sort((a,b) => a.localeCompare(b));
+            saveOptions();
+            populateDropdowns();
+            document.getElementById(config.filterId).value = trimmed;
+            filterBooks();
+        }
+        
+        function handleManageOption(type) {
+            const config = {
+                category: {key: 'categories', label: 'Category', field: 'category'},
+                condition: {key: 'conditions', label: 'Condition', field: 'condition'},
+                cover: {key: 'covers', label: 'Cover Type', field: 'coverType'}
+            }[type];
+            
+            const items = customOptions[config.key];
+            const list = items.map((v,i) => `${i+1}. ${v}`).join('\n');
+            const historyHint = optionsHistory.length > 0 ? `\n• Enter 'undo' to revert last change (${optionsHistory[optionsHistory.length-1].action})` : '';
+            const input = prompt(`Manage ${config.label}s\n\nCurrent options:\n${list}\n\n• Enter NUMBER to RENAME (e.g., 2)\n• Enter del:NUMBER to DELETE (e.g., del:3)${historyHint}`);
+            if (!input) return;
+            
+            const cmd = input.trim().toLowerCase();
+            
+            // UNDO
+            if (cmd === 'undo' || cmd === 'u') {
+                undoLast();
+                return;
+            }
+            
+            // DELETE
+            if (cmd.startsWith('del:') || cmd.startsWith('d:')) {
+                const idx = parseInt(cmd.split(':')[1]) - 1;
+                if (isNaN(idx) || idx < 0 || idx >= items.length) {
+                    alert('Invalid selection.');
+                    return;
+                }
+                const oldName = items[idx];
+                // Safety lock: prevent deleting last option
+                if (items.length <= 1) {
+                    alert('🔒 Safety lock: You cannot delete the last remaining option. Add another option first.');
+                    return;
+                }
+                const usedCount = books.filter(b => b[config.field] === oldName).length;
+                
+                let confirmMsg = `Delete "${oldName}"?`;
+                if (usedCount > 0) {
+                    confirmMsg = `"${oldName}" is used by ${usedCount} book(s).\n\nDelete it anyway? Those books will have their ${config.label} cleared (you can reassign them later).`;
+                }
+                if (!confirm(confirmMsg)) return;
+                
+                pushHistory(`Delete ${config.label}: ${oldName}`);
+                // Remove from options
+                items.splice(idx, 1);
+                saveOptions();
+                
+                // Clear from books
+                if (usedCount > 0) {
+                    books.forEach(b => {
+                        if (b[config.field] === oldName) {
+                            b[config.field] = '';
+                        }
+                    });
+                }
+                
+                populateDropdowns();
+                filterBooks();
+                alert(`"${oldName}" deleted.`);
+                return;
+            }
+            
+            // RENAME
+            const idx = parseInt(cmd) - 1;
+            if (isNaN(idx) || idx < 0 || idx >= items.length) {
+                alert('Invalid selection.');
+                return;
+            }
+            const oldName = items[idx];
+            const newName = prompt(`Rename "${oldName}" to:`, oldName);
+            if (!newName) return;
+            const trimmed = newName.trim();
+            if (!trimmed || trimmed === oldName) return;
+            if (items.includes(trimmed)) {
+                alert('That name already exists.');
+                return;
+            }
+            pushHistory(`Rename ${config.label}: ${oldName} → ${trimmed}`);
+            // Update options
+            items[idx] = trimmed;
+            items.sort((a,b) => a.localeCompare(b));
+            saveOptions();
+            // Update all books using old value
+            books.forEach(b => {
+                if (b[config.field] === oldName) {
+                    b[config.field] = trimmed;
+                }
+            });
+            populateDropdowns();
+            filterBooks();
+            alert(`"${oldName}" renamed to "${trimmed}" everywhere.`);
+        }
+
+
+        function renderTable(data = books) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            if (data.length === 0) {
+                tbody.innerHTML = `
+                    <tr><td colspan="10">
+                        <div class="empty-state">
+                            <div class="icon">📚</div>
+                            <h3>No books found</h3>
+                            <p>Try adjusting your filters or add a new book!</p>
+                        </div>
+                    </td></tr>`;
+                updateStats(data);
+                return;
+            }
+
+            data.forEach(book => {
+                const tr = document.createElement('tr');
+                const conditionClass = 'condition-' + book.condition.toLowerCase().replace(/\s+/g, '-');
+                const coverClass = 'cover-' + book.coverType.toLowerCase().replace(/\s+/g, '-');
+
+                tr.innerHTML = `
+                    <td contenteditable="true" onblur="updateBook(${book.id}, 'name', this.innerText)">${book.name}</td>
+                    <td>
+                        <div class="image-frame" onclick="uploadImage(${book.id})">
+                            ${book.image && book.image !== '📷' ? `<img src="${book.image}" alt="cover">` : '<span class="placeholder">📷</span>'}
+                        </div>
+                    </td>
+                    <td contenteditable="true" onblur="updateBook(${book.id}, 'author', this.innerText)">${book.author}</td>
+                    <td><span class="category-tag">${book.category}</span></td>
+                    <td contenteditable="true" onblur="updateBook(${book.id}, 'publisher', this.innerText)">${book.publisher}</td>
+                    <td><span class="cover-indicator ${coverClass}">${book.coverType}</span></td>
+                    <td>${book.language}</td>
+                    <td contenteditable="true" onblur="updateBook(${book.id}, 'pages', this.innerText)">${book.pages}</td>
+                    <td><span class="condition-badge ${conditionClass}">${book.condition}</span></td>
+                    <td>
+                        <div class="row-actions">
+                            <button class="row-btn row-btn-edit" onclick="editBook(${book.id})" title="Edit">✏️</button>
+                            <button class="row-btn row-btn-delete" onclick="deleteBook(${book.id})" title="Delete">🗑️</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            updateStats(data);
+        }
+
+        function updateStats(data) {
+            const total = data.length;
+            const hardcovers = data.filter(b => b.coverType === 'Hardcover').length;
+            const paperbacks = data.filter(b => b.coverType === 'Paperback').length;
+
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-hard').textContent = hardcovers;
+            document.getElementById('stat-paper').textContent = paperbacks;
+        }
+
+        function filterBooks() {
+            const catSel = document.getElementById('filterCategory');
+            const condSel = document.getElementById('filterCondition');
+            const coverSel = document.getElementById('filterCover');
+            
+            // Handle special actions
+            if (catSel.value === '__add__') { catSel.value = ''; handleAddOption('category'); return; }
+            if (catSel.value === '__manage__') { catSel.value = ''; handleManageOption('category'); return; }
+            if (catSel.value === '__undo__') { catSel.value = ''; undoLast(); return; }
+            if (condSel.value === '__add__') { condSel.value = ''; handleAddOption('condition'); return; }
+            if (condSel.value === '__manage__') { condSel.value = ''; handleManageOption('condition'); return; }
+            if (condSel.value === '__undo__') { condSel.value = ''; undoLast(); return; }
+            if (coverSel.value === '__add__') { coverSel.value = ''; handleAddOption('cover'); return; }
+            if (coverSel.value === '__manage__') { coverSel.value = ''; handleManageOption('cover'); return; }
+            if (coverSel.value === '__undo__') { coverSel.value = ''; undoLast(); return; }
+            
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const cat = catSel.value;
+            const cond = condSel.value;
+            const cover = coverSel.value;
+
+            const filtered = books.filter(book => {
+                const matchesSearch = !search || 
+                    book.name.toLowerCase().includes(search) ||
+                    book.author.toLowerCase().includes(search) ||
+                    book.publisher.toLowerCase().includes(search);
+                const matchesCat = !cat || book.category === cat;
+                const matchesCond = !cond || book.condition === cond;
+                const matchesCover = !cover || book.coverType === cover;
+                return matchesSearch && matchesCat && matchesCond && matchesCover;
+            });
+
+            renderTable(filtered);
+        }
+
+        function sortTable(field) {
+            if (currentSort.field === field) {
+                currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.field = field;
+                currentSort.dir = 'asc';
+            }
+
+            const sorted = [...books].sort((a, b) => {
+                let valA = a[field];
+                let valB = b[field];
+
+                if (field === 'pages') {
+                    valA = parseInt(valA) || 0;
+                    valB = parseInt(valB) || 0;
+                } else {
+                    valA = String(valA).toLowerCase();
+                    valB = String(valB).toLowerCase();
+                }
+
+                if (valA < valB) return currentSort.dir === 'asc' ? -1 : 1;
+                if (valA > valB) return currentSort.dir === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            renderTable(sorted);
+        }
+
+        function openModal(id = null) {
+            document.getElementById('modal').classList.add('active');
+            document.getElementById('bookForm').reset();
+            document.getElementById('editId').value = '';
+            document.getElementById('modalTitle').textContent = id ? '✏️ Edit Book' : '📖 Add New Book';
+
+            if (id) {
+                const book = books.find(b => b.id === id);
+                if (book) {
+                    document.getElementById('editId').value = book.id;
+                    document.getElementById('formName').value = book.name;
+                    document.getElementById('formAuthor').value = book.author;
+                    document.getElementById('formCategory').value = book.category;
+                    document.getElementById('formPublisher').value = book.publisher;
+                    document.getElementById('formCoverType').value = book.coverType;
+                    document.getElementById('formLanguage').value = book.language;
+                    document.getElementById('formPages').value = book.pages;
+                    document.getElementById('formCondition').value = book.condition;
+                }
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function saveBook(e) {
+            e.preventDefault();
+            const id = document.getElementById('editId').value;
+            const bookData = {
+                name: document.getElementById('formName').value,
+                author: document.getElementById('formAuthor').value,
+                category: document.getElementById('formCategory').value,
+                publisher: document.getElementById('formPublisher').value,
+                coverType: document.getElementById('formCoverType').value,
+                language: document.getElementById('formLanguage').value,
+                pages: document.getElementById('formPages').value,
+                condition: document.getElementById('formCondition').value,
+                image: '📷'
+            };
+
+            if (id) {
+                const idx = books.findIndex(b => b.id == id);
+                if (idx !== -1) {
+                    books[idx] = { ...books[idx], ...bookData };
+                }
+            } else {
+                const newId = Math.max(...books.map(b => b.id), 0) + 1;
+                books.push({ id: newId, ...bookData });
+            }
+
+            closeModal();
+            filterBooks();
+        }
+
+        function updateBook(id, field, value) {
+            const idx = books.findIndex(b => b.id === id);
+            if (idx !== -1) {
+                books[idx][field] = value;
+                updateStats(books);
+            }
+        }
+
+        function deleteBook(id) {
+            if (confirm('Are you sure you want to delete this book?')) {
+                books = books.filter(b => b.id !== id);
+                filterBooks();
+            }
+        }
+
+        function editBook(id) {
+            openModal(id);
+        }
+
+        function uploadImage(id) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = evt => {
+                        const img = new Image();
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = 300; canvas.height = 450;
+                            const ctx = canvas.getContext('2d');
+                            const ratio = Math.max(300/img.width, 450/img.height);
+                            const w = img.width * ratio, h = img.height * ratio;
+                            ctx.drawImage(img, (300-w)/2, (450-h)/2, w, h);
+                            const idx = books.findIndex(b => b.id === id);
+                            if (idx !== -1) {
+                                books[idx].image = canvas.toDataURL('image/jpeg', 0.8);
+                                filterBooks();
+                            }
+                        };
+                        img.src = evt.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        }
+
+        function exportData() {
+            const csv = [
+                ['Book Name', 'Author', 'Category', 'Publisher', 'Cover Type', 'Language', 'Pages', 'Condition'],
+                ...books.map(b => [b.name, b.author, b.category, b.publisher, b.coverType, b.language, b.pages, b.condition])
+            ].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+
+            let filename = prompt('Enter filename for your export:', 'book_collection.csv');
+            if (!filename) return;
+            if (!filename.toLowerCase().endsWith('.csv')) {
+                filename += '.csv';
+            }
+
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('modal').addEventListener('click', e => {
+            if (e.target === document.getElementById('modal')) closeModal();
+        });
+
+        // Initial render
+        populateDropdowns();
+        renderTable();
+    </script>
+</body>
+</html>
