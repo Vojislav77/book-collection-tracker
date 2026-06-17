@@ -114,6 +114,7 @@ All data stays on your device. The app does not send data to any server, use ana
 ## License
 
 This project is released for personal use. You are free to modify and distribute with attribution to the original author.
+
 Copyright 2026 Vojislav Korać
 
 <img width="1372" height="1207" alt="bct" src="https://github.com/user-attachments/assets/9bfebfa2-51f7-4d95-98ba-be79fe887c14" />
